@@ -3,4 +3,18 @@
 
 <%= @list.name %>
 
+<h3>Bookmarks</h3>
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.comment %>
+         <%# <%= link_to "Delete", bookmark_path(list_id), method: :delete, class: 'card-remove-link', data: { confirm: "Are you sure you want to delete bookmark?" } %>
+      <% end %>
+  </li>
+</ul>
+
+
+
+
 </div>
