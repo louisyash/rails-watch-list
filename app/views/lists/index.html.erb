@@ -1,9 +1,11 @@
 <div class="container">
   <h1>Lists</h1>
 
-  <div class="card">
+
     <% @lists.each do |list| %>
+    <div class="card m-2 btn w-50">
     <%= link_to list.name, list_path(list)  %>
+      </div>
     <% end %>
-  </div>
+
 </div>

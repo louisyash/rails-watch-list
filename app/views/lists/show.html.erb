@@ -9,6 +9,7 @@
   <% @bookmarks.each do |bookmark| %>
     <li>
       <%= bookmark.comment %>
+      <%= bookmark.movie %>
          <%# <%= link_to "Delete", bookmark_path(list_id), method: :delete, class: 'card-remove-link', data: { confirm: "Are you sure you want to delete bookmark?" } %>
       <% end %>
   </li>
