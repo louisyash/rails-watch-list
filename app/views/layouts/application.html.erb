@@ -5,15 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload", defer: true %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Libre+Franklin:wght@500&family=Montserrat:wght@100&family=Noto+Sans+Display:wght@200&family=Raleway:wght@100&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
       <div class="container-fluid">
         <%= link_to "#", class: "navbar-brand" do %>
-          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+          <%= image_tag "https://i.pinimg.com/originals/bf/ff/93/bfff93128b69a4e778d3dc4f020db3b2.png" %>
         <% end %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,9 +31,9 @@
               <%= link_to "Messages", "#", class: "nav-link" %>
             </li>
             <li class="nav-item dropdown">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/louisyash", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
+                <%= link_to "One Action", "#", class: "dropdown-item" %>
                 <%= link_to "Another action", "#", class: "dropdown-item" %>
                 <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
