@@ -1,18 +1,23 @@
-<div class="container">
+<div class="container show-container">
   <h1 style="color:black; margin-bottom:1em;"><%= @list.name %></h1>
-  <%= link_to "Create Bookmark", new_list_bookmark_path(@list), class: "btn btn-dark"  %>
+  <%= link_to "Create Bookmark", new_list_bookmark_path(@list), class: "btn btn-dark", style: "width: 50%; margin: 0 auto;"  %>
   <div class="card-container">
     <% @bookmarks.each do |bookmark| %>
       <div class="card-product custom-card-add column-6">
-        <img src="<%= bookmark.movie.poster_url%>" />
+      <% if bookmark.movie.poster_url %>
+      <% photo_url = bookmark.movie.poster_url %>
+      <% else %>
+      <% photo_url = "https://i.pinimg.com/originals/aa/f7/05/aaf705e06726ce3881288ae4be3ac5fe.jpg" %>
+      <% end %>
+        <img src="<%= photo_url %>" />
         <div class="card-product-infos">
           <h2> <%= bookmark.movie.title %></h2>
           <p><%= bookmark.comment %></p>
         </div>
-        <%= link_to "Delete", bookmark_path(bookmark), method: :delete, class: 'btn-danger', data: { confirm: "Are you sure you want to delete bookmark?" } %>
+        <%= link_to "Delete", bookmark_path(bookmark), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete bookmark?" } %>
       </div>
     <% end %>
   </div>
 </div>
-<%= link_to "Back to list", lists_path, class: "btn btn-info"  %>
+<%= link_to "Back to list", lists_path, class: "btn btn-info", style: "margin: 2em"  %>
 </div>
